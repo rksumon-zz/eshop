@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Auth\AdminLoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/login', [AdminLoginController::class,'index'])->name('login');
+Route::post('/admin/login/submit', [AdminLoginController::class,'login_submit']);
+Route::post('/admin/register/submit', [AdminLoginController::class,'register']);
 
 Route::get('/product', [ProductController::class, 'index']);

@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('uid');
+            $table->string('name')->nullable();
             $table->string('shop_name');
             $table->boolean('isAdmin')->default(true);
             $table->string('password');
