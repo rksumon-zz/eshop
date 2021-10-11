@@ -48,8 +48,7 @@ window.toast= toast;
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 let routes = [
-    {path: '/', component: require('./components/ExampleComponent').default},
-
+    // {path: '/products', component: require('./components/Product').default},
 
 ]
 // vue router config
@@ -62,4 +61,5 @@ Vue.component('login', require('./components/Login.vue').default);
 window.Fire = new vue()
 const app = new Vue({
     el: '#app',
+    router
 });

@@ -129,7 +129,7 @@ export default {
                         type: 'success'
                     })
                     //this.$router.push({ path: '/dashboard' })
-                   // window.location.replace(window.location.origin+"/product");
+                    window.location.replace(window.location.origin+"/products");
 
                 }else{
                     this.$Progress.fail();

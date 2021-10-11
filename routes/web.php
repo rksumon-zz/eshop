@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Auth\AdminLoginController;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,5 +25,10 @@ Route::get('/', function () {
 Route::get('/login', [AdminLoginController::class,'index'])->name('login');
 Route::post('/admin/login/submit', [AdminLoginController::class,'login_submit']);
 Route::post('/admin/register/submit', [AdminLoginController::class,'register']);
+Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
 Route::get('/product', [ProductController::class, 'index']);
+
+Route::get('{any}', function () {
+    return view('app');
+})->where('any','.*');
